@@ -1,0 +1,29 @@
+
+{% extends 'music/index.html' %}
+{% block add %}
+
+<div class="row">
+    {% for i in album %}
+  <div class="col-sm-4 col-md-3">
+    <div class="thumbnail">
+      <a href="{% url 'music:song' i.id %}">
+      <img src="{{ i.a_logo.url }}" width="200px" height="200px"></a>
+       <font color="#00008b" face="Viner Hand ITC"><p class="caption">
+       <h3>{{ i.title }}</h3>
+        <p>{{ i.artist }}<br>{{ i.genre }}</p></font>
+        <p><a href="{% url 'music:song' i.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-play" aria-hidden="true">play</span></a>
+            <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true">comment</span></a>
+             <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true">Download</span></a></p>
+        <p><a href="{% url 'music:update album' i.id%}" class="btn btn-default" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true">Update</span></a>
+          <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">Like</span></a>
+          <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">Unlike</span></a></p>
+          <p> <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-share" aria-hidden="true">Share</span></a>
+          <a href="#" class="btn btn-default" role="button">Buy In<span class="glyphicon glyphicon-usd" aria-hidden="true">.9</span></a>
+          <a href="{% url 'music:delete album' i.id %}" class="btn btn-default" role="button">Delete<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></p>
+      </div>
+    </div>
+  </div>
+
+    {% endfor %}
+    </div>
+{% endblock %}

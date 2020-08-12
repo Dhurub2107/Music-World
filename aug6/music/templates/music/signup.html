@@ -1,0 +1,37 @@
+{% extends 'music/master.html' %}
+{% block title %}Registration{% endblock %}
+{% block body %}
+ <form method="post" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+  <table width="=400" height="450" align="center" bordercolor="red" bgcolor="#20b2aa" border="5px">
+  <thead>
+<tr >
+<td colspan="2" align="center" height="100">  <span class="style2"><font face="Mistral" color="#7fff00" size="28"><u>Registration Panel </u></font></span><br \></td>
+        <center><div align="center"></div></center><br \ ><br \><br \><br \></tr>
+</thead>
+  <td>
+         <div align="center"><br \ >
+             <div id="signup">
+
+        {% for field in form %}
+           <br><br><span class="danger">{{ field.errors }}</span>
+            <font color="white"><label>{{field.label_tag }}
+         </label></font><label>{{ field.help_text }}</label>
+        {{ field }}<br><br>
+        {% endfor %}
+                 <tr>
+
+     <td colspan="2" height="50"><div align="center"><font color="blue"><input type="submit" value="Register"><input type="submit" value="Back"><a href="/login/"></a></font></div></td></div></center>
+      <td colspan="2" height="50"><div align="center"><font color="blue"><a href="/login/"></a></font></div></td></div></center>
+
+ </tr>
+         </div>
+    </td>
+     </table>
+    </div>
+  </div>
+
+  <div id="status"></div>
+</div>
+ </form>
+{% endblock %}

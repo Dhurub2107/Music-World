@@ -1,0 +1,15 @@
+{% extends 'music/master1.html' %}
+{% block title %}Songs{% endblock %}
+{% block body %}
+<div class="row">
+  <div class="col-sm-4 col-md-3">
+    <div class="thumbnail" style="background-color: azure">
+     <img src="{{ song.aid.a_logo.url }}" width="200px" height="100px">
+      <div class="caption">
+        <h3><b>{{ song.stitle }}</b></h3>
+        <p><b>{{ song.sartist}}<br>{{ song.genre }}</b></p><audio src="{{ song.file.url }}" controls="controls">Your browser does not support this audio element</audio>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endblock %}

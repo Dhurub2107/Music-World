@@ -1,0 +1,47 @@
+{% extends 'music/master1.html' %}
+{% block title %}Delete Album{% endblock %}
+{% block body %}
+ <div class="col-sm-4 col-md-3">
+    <div class="thumbnail">
+
+      <img src="{{ album.a_logo.url }}" width="100px" height="100px">
+       <font color="#00008b" face="Viner Hand ITC"><p class="caption">
+       <h3>{{ album.title }}</h3>
+        <p>{{ album.artist }}<br>{{ album.genre }}</p></font>
+          <form method="post" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+      <span class="style2"><font face="Mistral" color="#3300CC" size="28"><u>Delete Album </u></font></span><br>
+           <b><strong><font color="black"><input type="submit" value="Delete"></font><a href="/gaana/"><font color="black" face="Arial"><input type="button" value="Back">
+            </font></a></strong></b></center>
+     </form>
+    </div>
+    </div>
+  </div>
+
+
+</div>
+    <div class="col-sm-8 col-md-9">
+  <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{{ album.title }}</div>
+  <table class="table" style="background-color: azure">
+    <tr>
+        <td><b>Title</b></td>
+        <td><b>Artist</b></td>
+        <td><b>File</b> </td>
+        <td><b>Action</b></td>
+    </tr>
+    {% for i in album.song_set.all %}
+        <tr>
+        <td><b><a href="#" class="btn btn-default" role="label"><span class="glyphicon glyphicon-music" aria-hidden="true"></span></a></b>{{ i.stitle }}</td>
+        <td>{{ i.sartist }}</td>
+        <td>{{ i.filetype }} </td>
+        <td>none</td></b>
+    </tr>
+    {% endfor %}
+   </table>
+   </div>
+</div>
+</div>
+    </body>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'music/master1.html' %}
+{% block title %}Add Album{% endblock %}
+{% block body %}
+    <head xmlns="http://www.w3.org/1999/html">
+   </body>
+
+</head>
+
+</div>
+    <form method="post" enctype="multipart/form-data" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+    <table width="=321" height="205" align="right" bgcolor="aqua" border="5px">
+        <td>
+         <div align="center"><br \ >
+             <div id="login">
+      <span class="style2"><font face="Mistral" color="#3300CC" size="28"><u>Add Album </u></font></span><br \></div>
+        {% for field in form %}
+           <br><br><span class="danger">{{ field.errors }}</span>
+            <center><font color="white"><label>{{field.label_tag }}</label></font>
+        {{ field }}<br><br>
+    {% endfor %}
+   <b><strong><font color="black"><input type="submit" value="Add"></font><a href="/gaana/"><font color="black" face="Arial"><input type="button" value="Back">
+            </font></a></strong></b></center>
+         </div>
+    </td>
+
+     </table>
+    </div>
+  </div>
+
+  <div id="status"></div>
+</div>
+    </form>
+{% endblock %}

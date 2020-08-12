@@ -1,0 +1,10 @@
+body{
+    background: greenyellow url("images/back.jpg");
+
+}
+.navbar{
+    boder-radius:0;
+}
+.navbar{
+    font-family: 'Satisfy',cursive;
+}
